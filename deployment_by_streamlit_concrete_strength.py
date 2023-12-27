@@ -455,10 +455,3 @@ with open('amir.pkl','rb') as file:
 #     st.success('ALREADY_DATA_EXPLORED!', icon="✅")
 #     st.balloons()
 # #------------------------------------------------------------------------------------------------------------
-
-"""#LOCAL_HOST_STREAMLIT"""
-
-!streamlit run CONCRET_STRENGTH.py &>/content/logs.txt &
-import urllib
-print("Password/Enpoint IP for localtunnel is:",urllib.request.urlopen('https://ipv4.icanhazip.com').read().decode('utf8').strip("\n"))
-!npx localtunnel --port 8501 & curl
