@@ -7,55 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1RNg99QNG22nJ8VHG2953EMqw2MBRW8iL
 
 #DEPLOYMENT
-
-##CREAT_LOAD_PKL_FILE
-"""
-
-from xgboost import XGBRegressor
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import train_test_split
-import pickle
-import numpy as np
-import pandas as pd
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import cross_val_score,TimeSeriesSplit
-
-
-url = 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
-df=pd.read_csv(url)
-x=df.loc[:,df.columns != 'Strength']
-y=df['Strength']
-XGB_REG_mode=XGBRegressor()
-x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
-TSCV = TimeSeriesSplit(n_splits=3)
-score=cross_val_score(XGB_REG_mode,x_train,y_train,cv=TSCV) # kfold
-params={
-      'nthread':[4], #when use hyperthread, xgboost may become slower
-              'objective':['reg:linear'],
-              'learning_rate': [.03, 0.05, .07], #so called `eta` value
-              'max_depth': [5, 6, 7],
-              'min_child_weight': [4],
-              'silent': [1],
-              'subsample': [0.7],
-              'colsample_bytree': [0.7],
-              'n_estimators': [500]}
-
-grid_search=GridSearchCV(
-estimator=XGB_REG_mode,
-param_grid=params,
-scoring='neg_mean_squared_error',
-    cv=TSCV)
-
-
-data={'model':XGB_REG_mode}
-with open('amir.pkl','wb') as file:
-  pickle.dump(data,file)
-
-
-with open('amir.pkl','rb') as file:
- data=pickle.load(file)
- grid_search=data['model']
-
 """##VISUALIZATION"""
 
 # Commented out IPython magic to ensure Python compatibility.
