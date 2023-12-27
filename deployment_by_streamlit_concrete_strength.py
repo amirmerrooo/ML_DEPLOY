@@ -11,7 +11,6 @@ Original file is located at
 ##CREAT_LOAD_PKL_FILE
 """
 
-!pip install streamlit
 from xgboost import XGBRegressor
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
