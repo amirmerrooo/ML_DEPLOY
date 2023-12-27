@@ -1,0 +1,121 @@
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://172.28.0.12:8501
+  External URL: http://34.125.199.99:8501
+
+[21:15:58] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:15:58] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:15:58] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:15:58] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:15:59] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:15:59] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:00] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:00] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:00] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:00] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:01] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:01] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:02] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:02] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:03] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:03] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:04] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:04] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:05] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:05] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:06] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:06] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:07] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:07] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:08] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:08] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:09] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:09] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:10] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:10] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:11] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:11] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:12] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:12] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:13] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:13] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:14] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:14] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:15] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:15] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:15] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:15] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:16] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:16] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:17] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:17] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:18] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:18] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:19] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:19] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:19] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:19] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:21] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:21] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
+[21:16:22] WARNING: /workspace/src/objective/regression_obj.cu:209: reg:linear is now deprecated in favor of reg:squarederror.
+[21:16:22] WARNING: /workspace/src/learner.cc:742: 
+Parameters: { "silent" } are not used.
+
