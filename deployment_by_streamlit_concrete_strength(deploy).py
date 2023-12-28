@@ -277,7 +277,6 @@ def SHOW_DATA_PAGE():
 """##PREDICTION"""
 
 # Commented out IPython magic to ensure Python compatibility.
-# %%writefile PREDICTION_PAGE.py
 # import streamlit as st
 # import pickle
 # import numpy as np
