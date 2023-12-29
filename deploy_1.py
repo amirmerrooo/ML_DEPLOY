@@ -191,7 +191,6 @@ elif page =="VISUALIZATION":
     if button_VISU_8:
       fig = px.imshow(DATA_FRAME('df'), text_auto=True, aspect="auto")
       st.plotly_chart(fig)
-      DATA_FRAME('df').hist(figsize = (13,10))
       st.plotly_chart(DATA_FRAME('df').hist(figsize = (13,10)))
    #------------------------------------------------------------------
     st.write("HEAT_MAP(CEMENT_STRENGTH)")
