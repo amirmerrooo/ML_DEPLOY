@@ -11,7 +11,7 @@ Original file is located at
 ##CREAT_LOAD_PKL_FILE
 """
 
-# !pip install -U  --upgrade pip
+# !pip install -U  --upgrade pip 
 # !pip install streamlit
 import streamlit as st
 import pickle
@@ -22,6 +22,7 @@ import plotly.figure_factory as ff
 from sklearn.model_selection import train_test_split
 import plotly.express as px
 import seaborn as sns
+
 st.write("DISTRIBUTION_PLOTTING FOR DATA_FRAME")
 url = 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
 df=pd.read_csv(url)
@@ -32,7 +33,4 @@ st.title("""### VISUALIZATION """)
    #------------------------------------------------------------------
 st.write("DISTRIBUTION_PLOTTING FOR DATA_FRAME")
 button_VISU_1=st.button("DATA_FRAME",type="primary")
-if button_VISU_1:
-     fig, ax = plt.subplots()
-     ax.hist(df, bins=20)
-     st.pyplot(fig)
+df.hist(figsize = (13,10))
