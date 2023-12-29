@@ -36,6 +36,3 @@ if button_VISU_1:
      fig, ax = plt.subplots()
      ax.hist(df, bins=20)
      st.pyplot(fig)
-
-!pip show streamlit
-
