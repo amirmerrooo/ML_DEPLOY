@@ -80,19 +80,19 @@ if page == "EDA":
         st.write('DONE!!')
       elif CHECK_NULL_:
         st.write('EXPLORING_NULL!!')
-        st.dataframe(df.isnull().sum())
+        st.dataframe(DATA_FRAME('df').isnull().sum())
         st.write('DONE!!')
       elif DESCRIBE_:
         st.write('DESCRIPE_OF_DATA!!')
-        st.dataframe(df.describe())
+        st.dataframe(DATA_FRAME('df').describe())
         st.write('DONE!!')
       elif COLUMNS_:
         st.write('EXPLORE_HOW_MANY_FEATURES!!')
-        st.dataframe(df.columns)
+        st.dataframe(DATA_FRAME('df').columns)
         st.write('DONE!!')
       elif DUPLICATED_:
         st.write('CHECK_DUPLICATED_OF_DATA!!')
-        st.dataframe(df.duplicated().sum())
+        st.dataframe(DATA_FRAME('df').duplicated().sum())
         st.write('DONE!!')
     elif EDA_ == "COLUMNS_":
       st.write('VALUE_COUNTS_FOR_OUT_PUT[STRENGTH]!!')
@@ -102,13 +102,13 @@ if page == "EDA":
         st.write('CHECK_FOR_OUTPUT_[STRENGTH]!!')
         Strength_=st.toggle('Strength',disabled=False)
         if Strength_:
-         st.dataframe(df['Strength'].value_counts())
+         st.dataframe(DATA_FRAME('df')['Strength'].value_counts())
          st.write('DONE!!')
       elif UNIQUE_:
         st.write('CHECK_FOR_OUTPUT_[STRENGTH]!!')
         Strength_=st.toggle('Strength',disabled=False)
         if Strength_:
-         st.dataframe(df['Strength'].unique())
+         st.dataframe(DATA_FRAME('df')['Strength'].unique())
          st.write('DONE!!')
     st.balloons()
 #_______________________________________________________________________________________________________________________________________________________________
@@ -121,7 +121,7 @@ elif page =="VISUALIZATION":
     button_VISU_2=st.button("AREA_CHART(CEMENT_AGE_SUPERPLASTICIZER)",type="primary")
     if button_VISU_2:
      st.area_chart(
-     df, x="Strength", y=["Cement", "Superplasticizer","Age"], color=["#f0e936", "#4633f2","#0e6210"]) # Optional
+     DATA_FRAME('df'), x="Strength", y=["Cement", "Superplasticizer","Age"], color=["#f0e936", "#4633f2","#0e6210"]) # Optional
    #------------------------------------------------------------------
     st.write("DISTRIBUTION_PLOTTING THE DEPENDENT FEATURES (CEMENT_AGE_SUPERPLASTICIZER) AFFECTING ON STRENGTH")
     button_VISU_3=st.button("DIST_(CEMENT_AGE_SUPERPLASTICIZER)",type="primary")
@@ -186,37 +186,37 @@ elif page =="VISUALIZATION":
     st.write("HEAT_MAP(DATA_FRAME)")
     button_VISU_8=st.button("HEAT_MAP(DATA_FRAME)",type="primary")
     if button_VISU_8:
-      fig = px.imshow(df, text_auto=True, aspect="auto")
+      fig = px.imshow(DATA_FRAME('df'), text_auto=True, aspect="auto")
       st.plotly_chart(fig)
    #------------------------------------------------------------------
     st.write("HEAT_MAP(CEMENT_STRENGTH)")
     button_VISU_9=st.button("HEAT_MAP(CEMENT_STRENGTH)",type="primary")
     if button_VISU_9:
-      fig = px.density_heatmap(df, x="Cement", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
+      fig = px.density_heatmap(DATA_FRAME('df'), x="Cement", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
       st.plotly_chart(fig)
    #------------------------------------------------------------------
     st.write("HEAT_MAP(AGE_STRENGTH)")
     button_VISU_10=st.button("HEAT_MAP(AGE_STRENGTH)",type="primary")
     if button_VISU_10:
-      fig = px.density_heatmap(df, x="Age", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
+      fig = px.density_heatmap(DATA_FRAME('df'), x="Age", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
       st.plotly_chart(fig)
    #------------------------------------------------------------------
     st.write("HEAT_MAP(Superplasticizer_STRENGTH)")
     button_VISU_11=st.button("HEAT_MAP(Superplasticizer_STRENGTH)",type="primary")
     if button_VISU_11:
-      fig = px.density_heatmap(df, x="Superplasticizer", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
+      fig = px.density_heatmap(DATA_FRAME('df'), x="Superplasticizer", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
       st.plotly_chart(fig)
    #------------------------------------------------------------------
     st.write("HEAT_MAP(Fly Ash_STRENGTH)")
     button_VISU_12=st.button("HEAT_MAP(Fly Ash_STRENGTH)",type="primary")
     if button_VISU_12:
-      fig = px.density_heatmap(df, x="Fly Ash", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
+      fig = px.density_heatmap(DATA_FRAME('df'), x="Fly Ash", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
       st.plotly_chart(fig)
    #------------------------------------------------------------------
     st.write("HEAT_MAP(Superplasticizer_STRENGTH)")
     button_VISU_13=st.button("HEAT_MAP(Water_STRENGTH)",type="primary")
     if button_VISU_13:
-      fig = px.density_heatmap(df, x="Water", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
+      fig = px.density_heatmap(DATA_FRAME('df'), x="Water", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
       st.plotly_chart(fig)
     st.success('ALREADY_GRAPH_VISUALIZED!', icon="✅")
     st.balloons()
@@ -226,11 +226,11 @@ elif page =="PREDICTION":
   st.title("SOFTWARE_DEVELOPER_PREDICTION")
   st.write("""###WE_NEED_SOME_INFORMATION_TO_PREDICT_THE STRENGTH OF CONCRETE""")
   #------------------------------------------------------------------
-  url = 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
-  df=pd.read_csv(url)
+  # url = 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
+  # df=pd.read_csv(url)
 
   st.write('DATA_HEAD!!')
-  st.dataframe(df.head(10))
+  st.dataframe(DATA_FRAME('df').head(10))
 
   with st.form("my_form"):
 
@@ -248,8 +248,8 @@ elif page =="PREDICTION":
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   if ok:
 
-    x=df.loc[:,df.columns != 'Strength']
-    y=df['Strength']
+    x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
+    y=DATA_FRAME('df')['Strength']
 
     XGB_REG_mode=XGBRegressor()
 
