@@ -35,6 +35,9 @@ data_matrix = [['ITEM', 'DESCIBTION'],
                ['SCORE_TEST-%', 93.86]]
 fig = ff.create_table(data_matrix)
 st.plotly_chart(fig)
+def DATA_FRAME():
+  url = 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
+  df=pd.read_csv(url)
 #_______________________________________________________________________________________________________________________________________________________________
 
 page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",("EDA","VISUALIZATION","PREDICTION"))
@@ -52,8 +55,7 @@ if page == "EDA":
       MAX_=st.toggle('MAXIMUM_VALUES_FEATURES',disabled=False)
       HEAD_=st.toggle('DATA_HEAD',disabled=False)
       if EXPLORE_DATA_:
-        url = 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
-        df=pd.read_csv(url)
+        DATA_FRAME()
         st.write('EXPLORING_DATA_FRAM_OF_CONCRETE!!')
         st.dataframe(df)
         st.write('DONE!!')
