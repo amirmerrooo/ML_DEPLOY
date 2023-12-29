@@ -7,7 +7,9 @@ import plotly.figure_factory as ff
 from sklearn.model_selection import train_test_split
 import plotly.express as px
 import seaborn as sns
-
+from sklearn.model_selection import GridSearchCV
+from xgboost import XGBRegressor
+from sklearn.metrics import mean_absolute_error , mean_squared_error ,r2_score
 from sklearn.model_selection import cross_val_score,TimeSeriesSplit
 
 st.header('SOFTWARE_DEVELOPER_AI', divider='red')
