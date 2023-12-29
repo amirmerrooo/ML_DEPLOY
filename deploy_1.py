@@ -11,8 +11,8 @@ Original file is located at
 ##CREAT_LOAD_PKL_FILE
 """
 
-!pip install -U  --upgrade pip
-!pip install streamlit
+# !pip install -U  --upgrade pip
+# !pip install streamlit
 import streamlit as st
 import pickle
 import pandas as pd
