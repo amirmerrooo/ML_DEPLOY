@@ -17,7 +17,6 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
-import matplotlib as plt
 import plotly.figure_factory as ff
 from sklearn.model_selection import train_test_split
 import plotly.express as px
