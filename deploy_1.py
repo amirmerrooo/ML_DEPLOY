@@ -32,5 +32,5 @@ y=df['Strength']
 st.title("""### VISUALIZATION """)
    #------------------------------------------------------------------
 st.write("DISTRIBUTION_PLOTTING FOR DATA_FRAME")
-button_VISU_1=st.button("DATA_FRAME",type="primary")
-df.hist(figsize = (13,10))
+st.area_chart(
+    df, x="Strength", y=["Cement", "Superplasticizer","Age"], color=["#f0e936", "#4633f2","#0e6210"])
