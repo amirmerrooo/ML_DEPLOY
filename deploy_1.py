@@ -52,6 +52,8 @@ if page == "EDA":
       MAX_=st.toggle('MAXIMUM_VALUES_FEATURES',disabled=False)
       HEAD_=st.toggle('DATA_HEAD',disabled=False)
       if EXPLORE_DATA_:
+        url = 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
+        df=pd.read_csv(url)
         st.write('EXPLORING_DATA_FRAM_OF_CONCRETE!!')
         st.dataframe(df)
         st.write('DONE!!')
