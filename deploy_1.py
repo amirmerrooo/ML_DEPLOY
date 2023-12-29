@@ -35,6 +35,8 @@ data_matrix = [['ITEM', 'DESCIBTION'],
                ['SCORE_TEST-%', 93.86]]
 fig = ff.create_table(data_matrix)
 st.plotly_chart(fig)
+#_______________________________________________________________________________________________________________________________________________________________
+
 page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",("EDA","VISUALIZATION","PREDICTION"))
 if page == "EDA":
     st.title('EXPLORING_DATA_FRAME!!')
@@ -105,11 +107,9 @@ if page == "EDA":
          st.dataframe(df['Strength'].unique())
          st.write('DONE!!')
     st.balloons()
+#_______________________________________________________________________________________________________________________________________________________________
+
 elif page =="VISUALIZATION":
-        url = 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
-    df=pd.read_csv(url)
-    x=df.loc[:,df.columns != 'Strength']
-    y=df['Strength']
    #------------------------------------------------------------------
     st.title("""### VISUALIZATION """)
    #------------------------------------------------------------------
@@ -216,6 +216,8 @@ elif page =="VISUALIZATION":
       st.plotly_chart(fig)
     st.success('ALREADY_GRAPH_VISUALIZED!', icon="✅")
     st.balloons()
+#_______________________________________________________________________________________________________________________________________________________________
+
 elif page =="PREDICTION":
   st.title("SOFTWARE_DEVELOPER_PREDICTION")
   st.write("""###WE_NEED_SOME_INFORMATION_TO_PREDICT_THE STRENGTH OF CONCRETE""")
