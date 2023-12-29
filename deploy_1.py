@@ -12,6 +12,7 @@ Original file is located at
 """
 
 # !pip install -U  --upgrade pip
+!pip install matplotlib
 import streamlit as st
 import pickle
 import pandas as pd
