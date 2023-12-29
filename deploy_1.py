@@ -17,6 +17,5 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
-import seaborn as sns
 st.write("DISTRIBUTION_PLOTTING FOR DATA_FRAME")
 
