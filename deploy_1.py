@@ -11,7 +11,7 @@ Original file is located at
 ##CREAT_LOAD_PKL_FILE
 """
 
-!pip install -U  --upgrade pip
+# !pip install -U  --upgrade pip
 import streamlit as st
 st.write("DISTRIBUTION_PLOTTING FOR DATA_FRAME")
 
