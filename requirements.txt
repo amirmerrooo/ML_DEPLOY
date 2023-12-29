@@ -5,3 +5,4 @@ scikit_learn==1.2.2
 seaborn==0.12.2
 xgboost==2.0.2
 missingno==0.5.2
+streamlit==1.29.0
