@@ -38,13 +38,16 @@ data_matrix = [['ITEM', 'DESCIBTION'],
                ['SCORE_TEST-%', 93.86]]
 fig = ff.create_table(data_matrix)
 st.plotly_chart(fig)
+
+page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",("EDA","VISUALIZATION","PREDICTION"))
+
 def DATA_FRAME(df):
   url = 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
   df=pd.read_csv(url)
   return df
 #_______________________________________________________________________________________________________________________________________________________________
 
-page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",("EDA","VISUALIZATION","PREDICTION"))
+# page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",("EDA","VISUALIZATION","PREDICTION"))
 if page == "EDA":
     st.title('EXPLORING_DATA_FRAME!!')
     #------------------------------------------------------------------
@@ -321,5 +324,4 @@ elif page =="PREDICTION":
     st.plotly_chart(fig)
     #--------------------------------------------------------------------------
     st.success('ALREADY_MODEL_PREDICTED!', icon="✅")
-    st.success('ALREADY_DATA_EXPLORED!', icon="✅")
     st.balloons()
