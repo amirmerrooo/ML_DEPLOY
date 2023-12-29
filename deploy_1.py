@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
+import time
 import matplotlib.pyplot as plt
 import plotly.figure_factory as ff
 from sklearn.model_selection import train_test_split
@@ -190,6 +191,8 @@ elif page =="VISUALIZATION":
     if button_VISU_8:
       fig = px.imshow(DATA_FRAME('df'), text_auto=True, aspect="auto")
       st.plotly_chart(fig)
+      fig_DF=DATA_FRAME('df').hist(figsize = (13,10))
+      st.pyplot(fig_DF)
    #------------------------------------------------------------------
     st.write("HEAT_MAP(CEMENT_STRENGTH)")
     button_VISU_9=st.button("HEAT_MAP(CEMENT_STRENGTH)",type="primary")
