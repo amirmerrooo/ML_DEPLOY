@@ -280,8 +280,8 @@ elif page =="PREDICTION":
     scoring='neg_mean_squared_error',
     cv=TSCV)
 
-    Strength_=XGB_REG_mode.fit(x_train,y_train)
-    Strength_=XGB_REG_mode.predict(x)
+    Strength_=grid_search.fit(x_train,y_train)
+    Strength_=grid_search.predict(x)
 
     progress_text = "Operation in progress. Please wait."
     my_bar = st.progress(0, text=progress_text)
