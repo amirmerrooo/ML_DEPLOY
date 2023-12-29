@@ -11,7 +11,7 @@ Original file is located at
 ##CREAT_LOAD_PKL_FILE
 """
 
-# !pip install -U  --upgrade pip 
+!pip install -U  --upgrade pip 
 import streamlit as st
 import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt
