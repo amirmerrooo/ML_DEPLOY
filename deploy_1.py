@@ -236,7 +236,7 @@ elif page =="PREDICTION":
   # df=pd.read_csv(url)
 
   st.write('DATA_HEAD!!')
-  st.dataframe(DATA_FRAME('df').head(10))
+  st.dataframe(DATA_FRAME('df').head(5))
 
   with st.form("my_form"):
 
@@ -262,7 +262,7 @@ elif page =="PREDICTION":
     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
 
     TSCV = TimeSeriesSplit(n_splits=3)
-    score=cross_val_score(XGB_REG_mode,x_train,y_train,cv=TSCV) # kfold
+    score=cross_val_score(XGB_REG_mode,x_train,y_train,cv=TSCV) # TSCV
     params={
       'nthread':[4], #when use hyperthread, xgboost may become slower
               'objective':['reg:linear'],
@@ -280,8 +280,8 @@ elif page =="PREDICTION":
     scoring='neg_mean_squared_error',
     cv=TSCV)
 
-    Strength_=grid_search.fit(x_train,y_train)
-    Strength_=grid_search.predict(x)
+    Strength_=XGB_REG_mode.fit(x_train,y_train)
+    Strength_=XGB_REG_mode.predict(x)
 
     progress_text = "Operation in progress. Please wait."
     my_bar = st.progress(0, text=progress_text)
