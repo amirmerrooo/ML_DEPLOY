@@ -57,7 +57,7 @@ if page == "EDA":
       if EXPLORE_DATA_:
         DATA_FRAME()
         st.write('EXPLORING_DATA_FRAM_OF_CONCRETE!!')
-        st.dataframe(df)
+        st.dataframe(DATA_FRAME())
         st.write('DONE!!')
       elif MAX_:
         st.write('MAXIMUM_VALUES_FEATURES!!')
