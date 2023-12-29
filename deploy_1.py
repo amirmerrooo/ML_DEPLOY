@@ -18,7 +18,6 @@ import pickle
 import pandas as pd
 import numpy as np
 st.write("DISTRIBUTION_PLOTTING FOR DATA_FRAME")
-def SHOW_VISU_PAGE():
     url = 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
     df=pd.read_csv(url)
     x=df.loc[:,df.columns != 'Strength']
