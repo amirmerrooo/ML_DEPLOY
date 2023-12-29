@@ -192,7 +192,7 @@ elif page =="VISUALIZATION":
       fig = px.imshow(DATA_FRAME('df'), text_auto=True, aspect="auto")
       st.plotly_chart(fig)
       DATA_FRAME('df').hist(figsize = (13,10))
-      st.pyplot(DATA_FRAME('df').hist(figsize = (13,10)))
+      st.plotly_chart(DATA_FRAME('df').hist(figsize = (13,10)))
    #------------------------------------------------------------------
     st.write("HEAT_MAP(CEMENT_STRENGTH)")
     button_VISU_9=st.button("HEAT_MAP(CEMENT_STRENGTH)",type="primary")
