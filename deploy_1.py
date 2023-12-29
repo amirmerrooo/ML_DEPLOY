@@ -76,7 +76,7 @@ if page == "EDA":
         st.write('DONE!!')
       elif HEAD_:
         st.write('DATA_HEAD!!')
-        st.dataframe(df.head())
+        st.dataframe(DATA_FRAME('df').head())
         st.write('DONE!!')
       elif CHECK_NULL_:
         st.write('EXPLORING_NULL!!')
