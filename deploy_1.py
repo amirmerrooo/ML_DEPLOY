@@ -8,14 +8,6 @@ from sklearn.model_selection import train_test_split
 import plotly.express as px
 import seaborn as sns
 
-
-import streamlit as st
-from VISUALIZATION_PAGE import SHOW_VISU_PAGE
-from DATA_PAGE import SHOW_DATA_PAGE
-from PREDICTION_PAGE import SHOW_PREDICTION_PAGE
-import plotly.figure_factory as ff
-from sklearn.model_selection import GridSearchCV
-import missingno as msng
 from sklearn.model_selection import cross_val_score,TimeSeriesSplit
 
 st.header('SOFTWARE_DEVELOPER_AI', divider='red')
