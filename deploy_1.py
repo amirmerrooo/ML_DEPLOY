@@ -35,9 +35,10 @@ data_matrix = [['ITEM', 'DESCIBTION'],
                ['SCORE_TEST-%', 93.86]]
 fig = ff.create_table(data_matrix)
 st.plotly_chart(fig)
-def DATA_FRAME():
+def DATA_FRAME(df):
   url = 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
   df=pd.read_csv(url)
+  return df
 #_______________________________________________________________________________________________________________________________________________________________
 
 page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",("EDA","VISUALIZATION","PREDICTION"))
