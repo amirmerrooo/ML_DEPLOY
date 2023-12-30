@@ -241,7 +241,7 @@ def  user_report():
   with st.form("my_form"):
 
     Cement=st.number_input("Cement_kg in a m3")
-    Blast Furnace Slag=st.number_input("Blast_Furnace_Slag_kg in a m3")
+    Blast Furnace Slag=st.number_input("Blast Furnace Slag in a m3")
     Fly Ash=st.number_input("Fly_Ash_kg in a m3")
     Water=st.number_input("Water_kg in a m3")
     Superplasticizer=st.number_input("Superplasticizer_kg in a m3")
