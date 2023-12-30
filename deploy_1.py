@@ -247,7 +247,7 @@ elif page =="PREDICTION":
     Coarse_Aggregate=st.number_input("Coarse_Aggregate_kg in a m3")
     Fine_Aggregate=st.number_input("Fine_Aggregate_kg in a m3")
     Age=st.number_input("Age_Day (1~365)")
-  submitted = st.form_submit_button("SUBMIT")
+   submitted = st.form_submit_button("SUBMIT")
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   if ok:
 
