@@ -272,7 +272,8 @@ elif page =="PREDICTION":
     time.sleep(1)
     my_bar.empty()
     #--------------------------------------------------------------------------
-    st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0],2:.2f}] MPa")
+    # st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
+    st.subheader('$'+str(np.round(Strength_[0], 2)))
     # st.subheader(Strength_)
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
     Strength_TRAIN=XGB_REG_model.predict(x_train)
