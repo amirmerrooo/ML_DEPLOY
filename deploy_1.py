@@ -258,8 +258,7 @@ def  user_report():
       'Superplasticizer_':country,
       'Coarse_Aggregate_':draft_year,
       'Fine_Aggregate_':draft_round,
-      'Age_':draft_peak
-    }
+      'Age_':draft_peak}
     report_data = pd.DataFrame(user_report_data, index=[0])
     return report_data
   user_data = user_report()
