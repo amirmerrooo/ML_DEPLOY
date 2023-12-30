@@ -252,7 +252,7 @@ def  user_report():
     submitted = st.form_submit_button("SUBMIT")
     user_report_data = {
       'Cement_':Cement,
-      'Blast_Furnace_Slag_':Blast Furnace Slag,
+      'Blast Furnace Slag':Blast Furnace Slag,
       'Fly_Ash_':Fly Ash,
       'Water_':Water,
       'Superplasticizer_':Superplasticizer,
