@@ -237,7 +237,6 @@ elif page =="PREDICTION":
 
   st.write('DATA_HEAD!!')
   st.dataframe(DATA_FRAME('df').head(5))
-def  user_report():
   with st.form("my_form"):
 
     Cement=st.number_input("Cement_kg in a m3")
@@ -248,22 +247,9 @@ def  user_report():
     Coarse Aggregate=st.number_input("Coarse_Aggregate_kg in a m3")
     Fine Aggregate=st.number_input("Fine_Aggregate_kg in a m3")
     Age=st.number_input("Age_Day (1~365)")
-
-    submitted = st.form_submit_button("SUBMIT")
-    user_report_data = {
-      'Cement_':Cement,
-      'Blast Furnace Slag':Blast Furnace Slag,
-      'Fly_Ash_':Fly Ash,
-      'Water_':Water,
-      'Superplasticizer_':Superplasticizer,
-      'Coarse_Aggregate_':Coarse Aggregate,
-      'Fine_Aggregate_':Fine Aggregate,
-      'Age_':Age}
-    report_data = pd.DataFrame(user_report_data, index=[0])
-    return report_data
-  user_data = user_report()
-  ok=st.button("PREDICTION_STRENGTH_CONCRETE")
-  if ok:
+   submitted = st.form_submit_button("SUBMIT")
+   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
+   if ok:
 
     x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
     y=DATA_FRAME('df')['Strength']
