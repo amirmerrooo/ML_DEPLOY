@@ -261,27 +261,8 @@ elif page =="PREDICTION":
 
     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
 
-    TSCV = TimeSeriesSplit(n_splits=3)
-    score=cross_val_score(XGB_REG_mode,x_train,y_train,cv=TSCV) # TSCV
-    params={
-      'nthread':[4], #when use hyperthread, xgboost may become slower
-              'objective':['reg:linear'],
-              'learning_rate': [.03, 0.05, .07], #so called `eta` value
-              'max_depth': [5, 6, 7],
-              'min_child_weight': [4],
-              'silent': [1],
-              'subsample': [0.7],
-              'colsample_bytree': [0.7],
-              'n_estimators': [500]}
-
-    grid_search=GridSearchCV(
-    estimator=XGB_REG_mode,
-    param_grid=params,
-    scoring='neg_mean_squared_error',
-    cv=TSCV)
-
-    Strength_=grid_search.fit(x_train,y_train)
-    Strength_=grid_search.predict(x)
+    Strength_=XGB_REG_mode.fit(x_train,y_train)
+    Strength_=XGB_REG_mode.predict(x)
 
     progress_text = "Operation in progress. Please wait."
     my_bar = st.progress(0, text=progress_text)
@@ -293,11 +274,11 @@ elif page =="PREDICTION":
     #--------------------------------------------------------------------------
     st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[1]:.2f}] MPa")
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
-    Strength_TRAIN=grid_search.predict(x_train)
+    Strength_TRAIN=XGB_REG_mode.predict(x_train)
     SCORE_TRAIN=r2_score(y_train,Strength_TRAIN)*100
     st.subheader(" ACCURACY_TRAIN_FOR_MODEL_IS :- \n[{:.2f} %]".format(SCORE_TRAIN))
     st.write('------------------------------ACCURACY_TEST------------------------------')
-    Strength_TEST=grid_search.predict(x_test)
+    Strength_TEST=XGB_REG_mode.predict(x_test)
     SCORE_TEST=r2_score(y_test,Strength_TEST)*100
     st.subheader(" ACCURACY_TEST_FOR_MODEL_IS :- \n[{:.2f} %]".format(SCORE_TEST))
     st.write('-----------------------------ACCURACCY_GRAPH----------------------------')
