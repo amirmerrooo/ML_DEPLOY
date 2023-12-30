@@ -257,12 +257,12 @@ elif page =="PREDICTION":
     x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
     y=DATA_FRAME('df')['Strength']
 
-    XGB_REG_mode=XGBRegressor()
+    XGB_REG_model=XGBRegressor()
 
     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
 
-    Strength_=XGB_REG_mode.fit(x_train,y_train)
-    Strength_=XGB_REG_mode.predict(x)
+    Strength_=XGB_REG_model.fit(x_train,y_train)
+    Strength_=XGB_REG_model.predict(x)
 
     progress_text = "Operation in progress. Please wait."
     my_bar = st.progress(0, text=progress_text)
@@ -272,13 +272,13 @@ elif page =="PREDICTION":
     time.sleep(1)
     my_bar.empty()
     #--------------------------------------------------------------------------
-    st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[1]:.2f}] MPa")
+    st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
-    Strength_TRAIN=XGB_REG_mode.predict(x_train)
+    Strength_TRAIN=XGB_REG_model.predict(x_train)
     SCORE_TRAIN=r2_score(y_train,Strength_TRAIN)*100
     st.subheader(" ACCURACY_TRAIN_FOR_MODEL_IS :- \n[{:.2f} %]".format(SCORE_TRAIN))
     st.write('------------------------------ACCURACY_TEST------------------------------')
-    Strength_TEST=XGB_REG_mode.predict(x_test)
+    Strength_TEST=XGB_REG_model.predict(x_test)
     SCORE_TEST=r2_score(y_test,Strength_TEST)*100
     st.subheader(" ACCURACY_TEST_FOR_MODEL_IS :- \n[{:.2f} %]".format(SCORE_TEST))
     st.write('-----------------------------ACCURACCY_GRAPH----------------------------')
