@@ -241,7 +241,7 @@ elif page =="PREDICTION":
   with st.form("my_form"):
 
     Cement_=st.number_input("Cement_kg in a m3")
-    Blast_Furnace_Slag_=st.number_input.slider("Blast_Furnace_Slag_kg in a m3")
+    Blast_Furnace_Slag_=st.number_input("Blast_Furnace_Slag_kg in a m3")
     Fly_Ash_=st.number_input("Fly_Ash_kg in a m3")
     Water_=st.number_input("Water_kg in a m3")
     Superplasticizer_=st.number_input("Superplasticizer_kg in a m3")
