@@ -241,7 +241,7 @@ elif page =="PREDICTION":
   with st.form("my_form"):
 
     Cement_=st.number_input("Cement_kg in a m3")
-    Blast_Furnace_Slag_=st.number_input("Blast_Furnace_Slag_kg in a m3")
+    Blast_Furnace_Slag_=st.number_input.slider("Blast_Furnace_Slag_kg in a m3")
     Fly_Ash_=st.number_input("Fly_Ash_kg in a m3")
     Water_=st.number_input("Water_kg in a m3")
     Superplasticizer_=st.number_input("Superplasticizer_kg in a m3")
@@ -272,7 +272,7 @@ elif page =="PREDICTION":
     time.sleep(1)
     my_bar.empty()
     #--------------------------------------------------------------------------
-    st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
+    st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0],2:.2f}] MPa")
     # st.subheader(Strength_)
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
     Strength_TRAIN=XGB_REG_model.predict(x_train)
