@@ -240,16 +240,16 @@ elif page =="PREDICTION":
   with st.form("my_form"):
 
     Cement=st.number_input("Cement_kg in a m3")
-    Blast Furnace Slag=st.number_input("Blast Furnace Slag in a m3")
+    Blast_Furnace_Slag=st.number_input("Blast Furnace Slag in a m3")
     Fly Ash=st.number_input("Fly_Ash_kg in a m3")
     Water=st.number_input("Water_kg in a m3")
     Superplasticizer=st.number_input("Superplasticizer_kg in a m3")
     Coarse Aggregate=st.number_input("Coarse_Aggregate_kg in a m3")
     Fine Aggregate=st.number_input("Fine_Aggregate_kg in a m3")
     Age=st.number_input("Age_Day (1~365)")
-   submitted = st.form_submit_button("SUBMIT")
-   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
-   if ok:
+  submitted = st.form_submit_button("SUBMIT")
+  ok=st.button("PREDICTION_STRENGTH_CONCRETE")
+  if ok:
 
     x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
     y=DATA_FRAME('df')['Strength']
