@@ -251,14 +251,14 @@ def  user_report():
 
     submitted = st.form_submit_button("SUBMIT")
     user_report_data = {
-      'Cement_':rating,
-      'Blast_Furnace_Slag_':jersey,
-      'Fly_Ash_':team,
-      'Water_':position,
-      'Superplasticizer_':country,
-      'Coarse_Aggregate_':draft_year,
-      'Fine_Aggregate_':draft_round,
-      'Age_':draft_peak}
+      'Cement_':Cement,
+      'Blast_Furnace_Slag_':Blast Furnace Slag,
+      'Fly_Ash_':Fly Ash,
+      'Water_':Water,
+      'Superplasticizer_':Superplasticizer,
+      'Coarse_Aggregate_':Coarse Aggregate,
+      'Fine_Aggregate_':Fine Aggregate,
+      'Age_':Age}
     report_data = pd.DataFrame(user_report_data, index=[0])
     return report_data
   user_data = user_report()
