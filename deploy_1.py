@@ -254,8 +254,6 @@ elif page =="PREDICTION":
     XGB_REG_model.fit(x_train,y_train)
     n=np.array([[Cement_,Blast_Furnace_Slag_,Fly_Ash_,Water_,Superplasticizer_,Coarse_Aggregate_,Fine_Aggregate_,Age_]])
     Strength_=XGB_REG_model.predict(n)
-    # Strength_=XGB_REG_model.predict(np.array([[Cement, Blast_Furnace_Slag, Fly_Ash, Water_,Superplasticizer,Coarse_Aggregate,Fine_Aggregate,Age]]))
-
     progress_text = "Operation in progress. Please wait."
     my_bar = st.progress(0, text=progress_text)
     for percent_complete in range(100):
@@ -264,19 +262,18 @@ elif page =="PREDICTION":
     time.sleep(1)
     my_bar.empty()
     #--------------------------------------------------------------------------
-    # st.write(Strength_)
     st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
     Strength_TRAIN=XGB_REG_model.predict(x_train)
     SCORE_TRAIN=r2_score(y_train,Strength_TRAIN)*100
-    st.subheader(" ACCURACY_TRAIN_FOR_MODEL_IS :- \n[{:.2f} %]".format(SCORE_TRAIN))
+    st.subheader(" ACCURACY_TRAIN_FOR_MODEL_IS :- \n[{:.2f}]%".format(SCORE_TRAIN))
     st.write('------------------------------ACCURACY_TEST------------------------------')
     Strength_TEST=XGB_REG_model.predict(x_test)
     SCORE_TEST=r2_score(y_test,Strength_TEST)*100
-    st.subheader(" ACCURACY_TEST_FOR_MODEL_IS :- \n[{:.2f} %]".format(SCORE_TEST))
+    st.subheader(" ACCURACY_TEST_FOR_MODEL_IS :- \n[{:.2f}]%".format(SCORE_TEST))
     st.write('-----------------------------ACCURACCY_GRAPH----------------------------')
     labels = 'ACCURACY_TEST', 'ACCURACY_TRAIN'
-    sizes = [93.86, 99.17]
+    sizes = [48.6, 51.4]
     explode = (0, 0.1)
     fig1, ax1 = plt.subplots()
     ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
