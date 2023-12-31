@@ -248,7 +248,7 @@ elif page =="PREDICTION":
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   if ok:
     
-    url_2= 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
+    url_2= 'https://github.com/merrooo/ML_DEPLOY/blob/main/amir.pkl'
     with open('url_2','rb') as file:
      data=pickle.load(file)
      XGB_REG_model=XGBRegressor()
