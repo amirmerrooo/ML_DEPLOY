@@ -21,8 +21,6 @@ def DATA_FRAME(df):
   return df
 page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",(" ","EDA","VISUALIZATION","PREDICTION"))  
 if page == "EDA":
-    st.title('EXPLORING_DATA_FRAME!!')
-    #------------------------------------------------------------------
     EDA_=st.sidebar.selectbox("EXPLORING_DATA_COLUMNS",("DATA_FARME_","COLUMNS_"))
 
     if EDA_ == "DATA_FARME_":
