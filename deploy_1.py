@@ -246,12 +246,12 @@ elif page =="PREDICTION":
     submitted = st.form_submit_button("SUBMIT")
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   if ok:
-   x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
-   y=DATA_FRAME('df')['Strength']
-   XGB_REG_model=XGBRegressor()
-   x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
-   XGB_REG_model.fit(x_train,y_train)
-   def  user_report():
+    x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
+    y=DATA_FRAME('df')['Strength']
+    XGB_REG_model=XGBRegressor()
+    x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
+    XGB_REG_model.fit(x_train,y_train)
+    def  user_report():
      Cement=st.number_input("Cement_kg in a m3")
      Blast_Furnace_Slag=st.number_input("Blast Furnace Slag in a m3")
      Fly_Ash=st.number_input("Fly_Ash_kg in a m3")
