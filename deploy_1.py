@@ -234,38 +234,21 @@ elif page =="PREDICTION":
   #------------------------------------------------------------------
   st.write('DATA_HEAD!!')
   st.dataframe(DATA_FRAME('df').head(5))
-  with st.form("my_form"):
-    Cement=st.number_input("Cement_kg in a m3")
-    Blast_Furnace_Slag=st.number_input("Blast Furnace Slag in a m3")
-    Fly_Ash=st.number_input("Fly_Ash_kg in a m3")
-    Water_=st.number_input("Water_kg in a m3")
-    Superplasticizer=st.number_input("Superplasticizer_kg in a m3")
-    Coarse_Aggregate=st.number_input("Coarse_Aggregate_kg in a m3")
-    Fine_Aggregate=st.number_input("Fine_Aggregate_kg in a m3")
-    Age=st.number_input("Age_Day (1~365)")
-    submitted = st.form_submit_button("SUBMIT")
+
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   if ok:
+  
     x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
     y=DATA_FRAME('df')['Strength']
+
     XGB_REG_model=XGBRegressor()
+    
     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
     XGB_REG_model.fit(x_train,y_train)
-    def  user_report():
-      user_report_data = {
-       'Cement':Cement,
-       'Blast_Furnace_Slag':Blast_Furnace_Slag,
-       'Fly_Ash':Fly_Ash,
-       'Water_':Water_,
-       'Superplasticizer':Superplasticizer,
-       'Coarse_Aggregate':Coarse_Aggregate,
-       'Fine_Aggregate':Fine_Aggregate,
-       'Age':Age}
-      report_data = pd.DataFrame(user_report_data, index=[0])
-      return report_data
-    user_data = user_report()
-    st.write(user_data)
-    Strength_=XGB_REG_model.predict(user_data)
+    n=np.array([[Cement, Blast_Furnace_Slag, Fly_Ash, Water_,Superplasticizer,Coarse_Aggregate,Fine_Aggregate,Age]])
+    Strength_=XGB_REG_model.predict(n)
+    # Strength_=XGB_REG_model.predict(np.array([[Cement, Blast_Furnace_Slag, Fly_Ash, Water_,Superplasticizer,Coarse_Aggregate,Fine_Aggregate,Age]]))
+
     progress_text = "Operation in progress. Please wait."
     my_bar = st.progress(0, text=progress_text)
     for percent_complete in range(100):
@@ -273,8 +256,8 @@ elif page =="PREDICTION":
         my_bar.progress(percent_complete + 1, text=progress_text)
     time.sleep(1)
     my_bar.empty()
-    st.subheader('MPa'+str(np.round(Strength_[0], 2)))
-    # st.write(Strength_)
+    #--------------------------------------------------------------------------
+    st.write(Strength_)
     # st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
     Strength_TRAIN=XGB_REG_model.predict(x_train)
