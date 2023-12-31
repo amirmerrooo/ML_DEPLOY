@@ -265,8 +265,6 @@ elif page =="PREDICTION":
       return report_data
     user_data = user_report()
     Strength_=XGB_REG_model.predict(user_data)
-    # Strength_=XGB_REG_model.predict(np.array([[Cement, Blast_Furnace_Slag, Fly_Ash, Water_,Superplasticizer,Coarse_Aggregate,Fine_Aggregate,Age]]))
-
     progress_text = "Operation in progress. Please wait."
     my_bar = st.progress(0, text=progress_text)
     for percent_complete in range(100):
@@ -274,7 +272,6 @@ elif page =="PREDICTION":
         my_bar.progress(percent_complete + 1, text=progress_text)
     time.sleep(1)
     my_bar.empty()
-    #--------------------------------------------------------------------------
     st.subheader('MPa'+str(np.round(Strength_[0], 2)))
     # st.write(Strength_)
     # st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
