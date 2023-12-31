@@ -248,8 +248,11 @@ elif page =="PREDICTION":
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   if ok:
     
-    url_2= 'https://github.com/merrooo/ML_DEPLOY/blob/main/amir.pkl'
-    with open('url_2','rb') as file:
+    # url_2= 'https://github.com/merrooo/ML_DEPLOY/blob/main/amir.pkl'
+    data={'model':XGB_REG_mode}
+    with open('amir.pkl','wb') as file:
+      pickle.dump(data,file)
+    with open('amir.pkl','rb') as file:
      data=pickle.load(file)
      XGB_REG_model=XGBRegressor()
      XGB_REG_model=data['model']
