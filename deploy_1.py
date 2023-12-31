@@ -122,7 +122,7 @@ elif page =="VISUALIZATION":
     
     button_VISU_5=st.sidebar.button("DIST_FEATURE_(Cement)",type="primary")
     if button_VISU_5:
-    st.write("DISTRIBUTION_PLOTTING CEMENT REGARDING TO STRENGTH ")
+     st.write("DISTRIBUTION_PLOTTING CEMENT REGARDING TO STRENGTH ")
      x1 = np.random.randn(1000) - 2
      x2 = np.random.randn(1000)
      x3 = np.random.randn(1000) + 2
