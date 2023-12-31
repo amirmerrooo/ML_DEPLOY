@@ -30,7 +30,7 @@ if page == "EDA":
       CHECK_NULL_=st.sidebar.toggle('CHECK_NULL',disabled=False)
       DESCRIBE_=st.sidebar.toggle('DESCRIBE',disabled=False)
       COLUMNS_=st.sidebar.toggle('COLUMNS',disabled=False)
-      DUPLICATED_=st.sidebar.toggle'DUPLICATED',disabled=False)
+      DUPLICATED_=st.sidebar.toggle('DUPLICATED',disabled=False)
       MAX_=st.sidebar.toggle('MAXIMUM_VALUES_FEATURES',disabled=False)
       HEAD_=st.sidebar.toggle('DATA_HEAD',disabled=False)
       if EXPLORE_DATA_:
