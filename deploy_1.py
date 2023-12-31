@@ -252,17 +252,7 @@ elif page =="PREDICTION":
     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
     XGB_REG_model.fit(x_train,y_train)
     def  user_report():
-     Cement=st.number_input("Cement_kg in a m3")
-     Blast_Furnace_Slag=st.number_input("Blast Furnace Slag in a m3")
-     Fly_Ash=st.number_input("Fly_Ash_kg in a m3")
-     Water_=st.number_input("Water_kg in a m3")
-     Superplasticizer=st.number_input("Superplasticizer_kg in a m3")
-     Coarse_Aggregate=st.number_input("Coarse_Aggregate_kg in a m3")
-     Fine_Aggregate=st.number_input("Fine_Aggregate_kg in a m3")
-     Age=st.number_input("Age_Day (1~365)")
-     submitted = st.form_submit_button("SUBMIT")
-
-     user_report_data = {
+      user_report_data = {
        'Cement':Cement,
        'Blast_Furnace_Slag':Blast_Furnace_Slag,
        'Fly_Ash':Fly_Ash,
