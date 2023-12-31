@@ -162,33 +162,33 @@ elif page =="VISUALIZATION":
       fig = px.imshow(DATA_FRAME('df'), text_auto=True, aspect="auto")
       st.plotly_chart(fig)
     
-    button_VISU_9=st.sidebar.button("HEAT_MAP(CEMENT_STRENGTH)",type="primary")
+    button_VISU_9=st.sidebar.button("HEAT_MAP_CEMENT",type="primary")
     if button_VISU_9:
       st.write("HEAT_MAP(CEMENT_STRENGTH)")
       fig = px.density_heatmap(DATA_FRAME('df'), x="Cement", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
       st.plotly_chart(fig)
       
     
-    button_VISU_10=st.sidebar.button("HEAT_MAP(AGE_STRENGTH)",type="primary")
+    button_VISU_10=st.sidebar.button("HEAT_MAP_AGE",type="primary")
     if button_VISU_10:
       st.write("HEAT_MAP(AGE_STRENGTH)")
       fig = px.density_heatmap(DATA_FRAME('df'), x="Age", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
       st.plotly_chart(fig)
       
     
-    button_VISU_11=st.sidebar.button("HEAT_MAP(Superplasticizer_STRENGTH)",type="primary")
+    button_VISU_11=st.sidebar.button("HEAT_MAP_Superplasticizer",type="primary")
     if button_VISU_11:
       st.write("HEAT_MAP(Superplasticizer_STRENGTH)")
       fig = px.density_heatmap(DATA_FRAME('df'), x="Superplasticizer", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
       st.plotly_chart(fig)
     
-    button_VISU_12=st.sidebar.button("HEAT_MAP(Fly Ash_STRENGTH)",type="primary")
+    button_VISU_12=st.sidebar.button("HEAT_MAP_Fly Ash_STRENGTH",type="primary")
     if button_VISU_12:
       st.write("HEAT_MAP(Fly Ash_STRENGTH)")
       fig = px.density_heatmap(DATA_FRAME('df'), x="Fly Ash", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
       st.plotly_chart(fig)
     
-    button_VISU_13=st.sidebar.button("HEAT_MAP(Water_STRENGTH)",type="primary")
+    button_VISU_13=st.sidebar.button("HEAT_MAP_Water",type="primary")
     if button_VISU_13:
       st.write("HEAT_MAP(Superplasticizer_STRENGTH)")
       fig = px.density_heatmap(DATA_FRAME('df'), x="Water", y="Strength", text_auto=True, nbinsx=7, color_continuous_scale='turbid_r', width=686, height=889)
