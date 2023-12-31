@@ -26,13 +26,13 @@ if page == "EDA":
     EDA_=st.sidebar.selectbox("EXPLORING_DATA_COLUMNS",("DATA_FARME_","COLUMNS_"))
 
     if EDA_ == "DATA_FARME_":
-      st.sidebar.toggle('EXPLORE_DATA',disabled=False)
-      CHECK_NULL_=st.toggle('CHECK_NULL',disabled=False)
-      DESCRIBE_=st.toggle('DESCRIBE',disabled=False)
-      COLUMNS_=st.toggle('COLUMNS',disabled=False)
-      DUPLICATED_=st.toggle('DUPLICATED',disabled=False)
-      MAX_=st.toggle('MAXIMUM_VALUES_FEATURES',disabled=False)
-      HEAD_=st.toggle('DATA_HEAD',disabled=False)
+      EXPLORE_DATA_=st.sidebar.toggle('EXPLORE_DATA',disabled=False)
+      CHECK_NULL_=st.sidebar.toggle('CHECK_NULL',disabled=False)
+      DESCRIBE_=st.sidebar.toggle('DESCRIBE',disabled=False)
+      COLUMNS_=st.sidebar.toggle('COLUMNS',disabled=False)
+      DUPLICATED_=st.sidebar.toggle'DUPLICATED',disabled=False)
+      MAX_=st.sidebar.toggle('MAXIMUM_VALUES_FEATURES',disabled=False)
+      HEAD_=st.sidebar.toggle('DATA_HEAD',disabled=False)
       if EXPLORE_DATA_:
         st.write('EXPLORING_DATA_FRAM_OF_CONCRETE!!')
         st.dataframe(DATA_FRAME('df'))
