@@ -33,7 +33,6 @@ if page == "EDA":
       MAX_=st.sidebar.toggle('MAXIMUM_VALUES_FEATURES',disabled=False)
       HEAD_=st.sidebar.toggle('DATA_HEAD',disabled=False)
       if EXPLORE_DATA_:
-        st.write('EXPLORING_DATA_FRAM_OF_CONCRETE!!')
         st.dataframe(DATA_FRAME('df'))
         st.write('DONE!!')
       elif MAX_:
@@ -88,7 +87,6 @@ if page == "EDA":
 
 elif page =="VISUALIZATION":
    #------------------------------------------------------------------
-    st.header("-- VISUALIZATION --")
     st.sidebar.write('AREA_CHART!!')
     button_VISU_2=st.sidebar.button("AREA_CHART",type="primary")
     st.sidebar.write('DISTRIBUTION_PLOTTING!!')
@@ -209,8 +207,7 @@ elif page =="VISUALIZATION":
 #_______________________________________________________________________________________________________________________________________________________________
 
 elif page =="PREDICTION":
-  st.title("SOFTWARE_DEVELOPER_PREDICTION")
-  st.write("""###WE_NEED_SOME_INFORMATION_TO_PREDICT_THE STRENGTH OF CONCRETE""")
+  st.write("WE_NEED_SOME_INFORMATION_TO_PREDICT_THE STRENGTH OF CONCRETE")
   #------------------------------------------------------------------
   st.write('DATA_HEAD!!')
   st.dataframe(DATA_FRAME('df').head(5))
