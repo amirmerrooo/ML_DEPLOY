@@ -266,12 +266,6 @@ elif page =="PREDICTION":
     time.sleep(1)
     my_bar.empty()
     #--------------------------------------------------------------------------
-    data={'model':XGB_REG_mode}
-    with open('amir.pkl','wb') as file:
-      pickle.dump(data,file)
-    with open('amir.pkl','rb') as file:
-     data=pickle.load(file)
-     Strength_=data['model']
     # st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
     st.write(Strength_[0])
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
