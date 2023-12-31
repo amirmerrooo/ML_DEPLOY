@@ -254,7 +254,7 @@ elif page =="PREDICTION":
     XGB_REG_model=XGBRegressor()
     
     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
-    Strength_=XGB_REG_model.fit(x_train,y_train)
+    XGB_REG_model.fit(x_train,y_train)
     Strength_=XGB_REG_model.predict(np.array([[Cement, Blast_Furnace_Slag, Fly_Ash, Water_,Superplasticizer,Coarse_Aggregate,Fine_Aggregate,Age]]))
 
     progress_text = "Operation in progress. Please wait."
