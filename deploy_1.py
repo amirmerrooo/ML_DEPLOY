@@ -238,6 +238,20 @@ elif page =="- PREDICTION -":
     my_bar.empty()
     #--------------------------------------------------------------------------
     st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
+    
+    data_1 = {
+    'Cement_': np.array([Cement_]),
+    'Blast_Furnace_Slag_':np.array([Blast_Furnace_Slag_]),
+    'Fly_Ash_': np.array([Fly_Ash_]),
+    'Water_': np.array([Water_]),
+    'Superplasticizer_': np.array([Superplasticizer_]),
+    'Coarse_Aggregate_': np.array([Coarse_Aggregate_]),
+    'Fine_Aggregate_': np.array([Fine_Aggregate_]),
+    'Age_': np.array([Age_]),
+    'STRENGTH': np.array([Strength_])}
+    NEW_PREDICTION_DATA = pd.DataFrame({k: v[0] for k, v in data_1.items()}, index=[0])
+    st.dataframe(NEW_PREDICTION_DATA)
+    # df.to_excel('NEW_PREDICTION_DATA.xlsx', index=False)
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
     Strength_TRAIN=XGB_REG_model.predict(x_train)
     SCORE_TRAIN=r2_score(y_train,Strength_TRAIN)*100
