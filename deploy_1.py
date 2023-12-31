@@ -17,7 +17,7 @@ def DATA_FRAME(df):
   url_1= 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
   df=pd.read_csv(url_1)
   return df
-page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",("-*15","EDA","VISUALIZATION","PREDICTION"))  
+page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",("-"*15,"EDA","VISUALIZATION","PREDICTION"))  
 if page == "EDA":
     st.title('EXPLORING_DATA_FRAME!!')
     #------------------------------------------------------------------
