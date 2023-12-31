@@ -247,8 +247,7 @@ elif page =="PREDICTION":
     submitted = st.form_submit_button("SUBMIT")
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   if ok:
-    
-    # url_2= 'https://github.com/merrooo/ML_DEPLOY/blob/main/amir.pkl'  
+  
     x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
     y=DATA_FRAME('df')['Strength']
 
@@ -266,8 +265,8 @@ elif page =="PREDICTION":
     time.sleep(1)
     my_bar.empty()
     #--------------------------------------------------------------------------
+    st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_:.2f}] MPa")
     # st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
-    st.write(Strength_[0])
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
     Strength_TRAIN=XGB_REG_model.predict(x_train)
     SCORE_TRAIN=r2_score(y_train,Strength_TRAIN)*100
