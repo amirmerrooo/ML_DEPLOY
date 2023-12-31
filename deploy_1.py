@@ -261,8 +261,8 @@ elif page =="PREDICTION":
        'Coarse_Aggregate':Coarse_Aggregate,
        'Fine_Aggregate':Fine_Aggregate,
        'Age':Age}
-     report_data = pd.DataFrame(user_report_data, index=[0])
-     return report_data
+      report_data = pd.DataFrame(user_report_data, index=[0])
+      return report_data
     user_data = user_report()
     Strength_=XGB_REG_model.predict(user_data)
     # Strength_=XGB_REG_model.predict(np.array([[Cement, Blast_Furnace_Slag, Fly_Ash, Water_,Superplasticizer,Coarse_Aggregate,Fine_Aggregate,Age]]))
