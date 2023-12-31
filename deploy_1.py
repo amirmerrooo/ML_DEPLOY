@@ -42,8 +42,8 @@ st.plotly_chart(fig)
 page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",("EDA","VISUALIZATION","PREDICTION"))
 
 def DATA_FRAME(df):
-  url = 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
-  df=pd.read_csv(url)
+  url_1= 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
+  df=pd.read_csv(url_1)
   return df
 #_______________________________________________________________________________________________________________________________________________________________
 
@@ -232,9 +232,6 @@ elif page =="PREDICTION":
   st.title("SOFTWARE_DEVELOPER_PREDICTION")
   st.write("""###WE_NEED_SOME_INFORMATION_TO_PREDICT_THE STRENGTH OF CONCRETE""")
   #------------------------------------------------------------------
-  # url = 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
-  # df=pd.read_csv(url)
-
   st.write('DATA_HEAD!!')
   st.dataframe(DATA_FRAME('df').head(5))
   with st.form("my_form"):
@@ -250,12 +247,16 @@ elif page =="PREDICTION":
     submitted = st.form_submit_button("SUBMIT")
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   if ok:
-
+    
+    url_2= 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
+    with open('url_2','rb') as file:
+     data=pickle.load(file)
+     XGB_REG_model=XGBRegressor()
+     XGB_REG_model=data['model']
+      
     x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
     y=DATA_FRAME('df')['Strength']
-
-    XGB_REG_model=XGBRegressor()
-
+    
     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
     Strength_=XGB_REG_model.fit(x_train,y_train)
     Strength_=XGB_REG_model.predict(np.array([[Cement, Blast_Furnace_Slag, Fly_Ash, Water_,Superplasticizer,Coarse_Aggregate,Fine_Aggregate,Age]]))
