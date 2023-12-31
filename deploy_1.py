@@ -74,12 +74,12 @@ if page == "EDA":
         st.write('DONE!!')
     elif EDA_ == "COLUMNS_":
       st.write('VALUE_COUNTS_FOR_OUT_PUT[STRENGTH]!!')
-      VALUE_COUNTS_=st.toggle('VALUE_COUNTS',disabled=False)
-      UNIQUE_=st.toggle('UNIQUE',disabled=False)
+      VALUE_COUNTS_=st.sidebar.toggle('VALUE_COUNTS',disabled=False)
+      UNIQUE_=st.sidebar.toggle('UNIQUE',disabled=False)
       if VALUE_COUNTS_:
         st.write('CHECK_FOR_OUTPUT_[STRENGTH]!!')
-        Strength_=st.toggle('Strength',disabled=False)
-        if Strength_:
+        STRENGTH_=st.toggle('STRENGTH',disabled=False)
+        if STRENGTH_:
          st.dataframe(DATA_FRAME('df')['Strength'].value_counts())
          st.write('DONE!!')
       elif UNIQUE_:
