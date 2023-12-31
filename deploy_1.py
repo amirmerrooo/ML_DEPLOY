@@ -249,12 +249,13 @@ elif page =="PREDICTION":
   if ok:
     
     # url_2= 'https://github.com/merrooo/ML_DEPLOY/blob/main/amir.pkl'
+    XGB_REG_model=XGBRegressor()
     data={'model':XGB_REG_mode}
     with open('amir.pkl','wb') as file:
       pickle.dump(data,file)
     with open('amir.pkl','rb') as file:
      data=pickle.load(file)
-     XGB_REG_model=XGBRegressor()
+     
      XGB_REG_model=data['model']
       
     x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
