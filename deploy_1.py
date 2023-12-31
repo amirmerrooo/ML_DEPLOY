@@ -19,11 +19,11 @@ def DATA_FRAME(df):
   url_1= 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
   df=pd.read_csv(url_1)
   return df
-page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",(" ","EDA","VISUALIZATION","PREDICTION"))  
-if page == "EDA":
-    EDA_=st.sidebar.selectbox("EXPLORING_DATA_COLUMNS",("DATA_FARME_","COLUMNS_"))
+page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",("- -","- EDA -","- VISUALIZATION -","- PREDICTION -"))  
+if page == "- EDA -":
+    EDA_=st.sidebar.selectbox("EXPLORING_DATA_COLUMNS",("- -","- DATA_FARME -","- COLUMNS -"))
 
-    if EDA_ == "DATA_FARME_":
+    if EDA_ == "- DATA_FARME -":
       EXPLORE_DATA_=st.sidebar.toggle('EXPLORE_DATA',disabled=False)
       CHECK_NULL_=st.sidebar.toggle('CHECK_NULL',disabled=False)
       DESCRIBE_=st.sidebar.toggle('DESCRIBE',disabled=False)
@@ -64,7 +64,7 @@ if page == "EDA":
         st.write('EXPLORE_HOW_MANY_FEATURES!!')
         st.dataframe(DATA_FRAME('df').columns)
         st.write('DONE!!')
-    elif EDA_ == "COLUMNS_":
+    elif EDA_ == "- COLUMNS -":
       st.write('VALUE_COUNTS_FOR_OUT_PUT[STRENGTH]!!')
       VALUE_COUNTS_=st.sidebar.toggle('VALUE_COUNTS',disabled=False)
       UNIQUE_=st.sidebar.toggle('UNIQUE',disabled=False)
@@ -83,7 +83,7 @@ if page == "EDA":
     st.balloons()
 #_______________________________________________________________________________________________________________________________________________________________
 
-elif page =="VISUALIZATION":
+elif page =="- VISUALIZATION -":
    #------------------------------------------------------------------
     st.sidebar.write('AREA_CHART!!')
     button_VISU_2=st.sidebar.button("AREA_CHART",type="primary")
@@ -204,7 +204,7 @@ elif page =="VISUALIZATION":
     st.balloons()
 #_______________________________________________________________________________________________________________________________________________________________
 
-elif page =="PREDICTION":
+elif page =="- PREDICTION -":
   st.write("WE_NEED_SOME_INFORMATION_TO_PREDICT_THE STRENGTH OF CONCRETE")
   #------------------------------------------------------------------
   st.write('DATA_HEAD!!')
