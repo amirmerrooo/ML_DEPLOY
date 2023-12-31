@@ -90,13 +90,13 @@ elif page =="VISUALIZATION":
    #------------------------------------------------------------------
     st.header("-- VISUALIZATION --")
     
-    button_VISU_2=st.sidebar.button("AREA_CHART(CEMENT_AGE_SUPERPLASTICIZER)",type="primary")
+    button_VISU_2=st.sidebar.button("AREA_CHART",type="primary")
     if button_VISU_2:
      st.write("AREA_CHART_DEPENDENT FEATURES (CEMENT_AGE_SUPERPLASTICIZER) AFFECTING ON STRENGTH")
      st.area_chart(
      DATA_FRAME('df'), x="Strength", y=["Cement", "Superplasticizer","Age"], color=["#f0e936", "#4633f2","#0e6210"]) # Optional
       
-    button_VISU_3=st.sidebar.button("DIST_(CEMENT_AGE_SUPERPLASTICIZER)",type="primary")
+    button_VISU_3=st.sidebar.button("DISTRUBTION_PLOT",type="primary")
     if button_VISU_3:
       st.write("DISTRIBUTION_PLOTTING THE DEPENDENT FEATURES (CEMENT_AGE_SUPERPLASTICIZER) AFFECTING ON STRENGTH")
       x1 = np.random.randn(200) - 2
@@ -108,7 +108,7 @@ elif page =="VISUALIZATION":
         hist_data, group_labels, bin_size=[.1, .25, .5])
       st.plotly_chart(fig, use_container_width=True)
     
-    button_VISU_4=st.sidebar.button("DIST_FEATURE_(Strength_MPa)",type="primary")
+    button_VISU_4=st.sidebar.button("DISTRUBTION_PLOT",type="primary")
     if button_VISU_4:
       st.write("DISTRIBUTION_PLOTTING CEMENT REGARDING TO STRENGTH ")
       x1 = np.random.randn(1000) - 2
@@ -120,7 +120,7 @@ elif page =="VISUALIZATION":
           hist_data, group_labels, bin_size=[.1, .25, .5])
       st.plotly_chart(fig, use_container_width=True)
     
-    button_VISU_5=st.sidebar.button("DIST_FEATURE_(Cement)",type="primary")
+    button_VISU_5=st.sidebar.button("DISTRUBTION_PLOT",type="primary")
     if button_VISU_5:
      st.write("DISTRIBUTION_PLOTTING CEMENT REGARDING TO STRENGTH ")
      x1 = np.random.randn(1000) - 2
@@ -132,7 +132,7 @@ elif page =="VISUALIZATION":
           hist_data, group_labels, bin_size=[.1, .25, .5])
      st.plotly_chart(fig, use_container_width=True)
     
-    button_VISU_6=st.sidebar.button("DIST_FEATURE_(Age)",type="primary")
+    button_VISU_6=st.sidebar.button("DISTRUBTION_PLOT",type="primary")
     if button_VISU_6:
       st.write("DISTRIBUTION_PLOTTING CEMENT REGARDING TO STRENGTH ")
       x1 = np.random.randn(1000) - 2
@@ -144,7 +144,7 @@ elif page =="VISUALIZATION":
          hist_data, group_labels, bin_size=[.1, .25, .5])
       st.plotly_chart(fig, use_container_width=True)
     
-    button_VISU_7=st.sidebar.button("DIST_FEATURE_(Superplasticizer)",type="primary")
+    button_VISU_7=st.sidebar.button("DISTRUBTION_PLOT",type="primary")
     if button_VISU_7:
       st.write("DISTRIBUTION_PLOTTING CEMENT REGARDING TO STRENGTH ")
       x1 = np.random.randn(1000) - 2
@@ -156,7 +156,7 @@ elif page =="VISUALIZATION":
           hist_data, group_labels, bin_size=[.1, .25, .5])
       st.plotly_chart(fig, use_container_width=True)
       
-    button_VISU_8=st.sidebar.button("HEAT_MAP(DATA_FRAME)",type="primary")
+    button_VISU_8=st.sidebar.button("HEAT_MAP_DF",type="primary")
     if button_VISU_8:
       st.write("HEAT_MAP(DATA_FRAME)")
       fig = px.imshow(DATA_FRAME('df'), text_auto=True, aspect="auto")
