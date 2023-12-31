@@ -30,7 +30,6 @@ if page == "EDA":
       CHECK_NULL_=st.sidebar.toggle('CHECK_NULL',disabled=False)
       DESCRIBE_=st.sidebar.toggle('DESCRIBE',disabled=False)
       COLUMNS_=st.sidebar.toggle('COLUMNS',disabled=False)
-      DUPLICATED_=st.sidebar.toggle('DUPLICATED',disabled=False)
       MAX_=st.sidebar.toggle('MAXIMUM_VALUES_FEATURES',disabled=False)
       HEAD_=st.sidebar.toggle('DATA_HEAD',disabled=False)
       if EXPLORE_DATA_:
@@ -68,10 +67,6 @@ if page == "EDA":
         st.write('EXPLORE_HOW_MANY_FEATURES!!')
         st.dataframe(DATA_FRAME('df').columns)
         st.write('DONE!!')
-      elif DUPLICATED_:
-        st.write('CHECK_DUPLICATED_OF_DATA!!')
-        st.dataframe(DATA_FRAME('df').duplicated().sum())
-        st.write('DONE!!')
     elif EDA_ == "COLUMNS_":
       st.write('VALUE_COUNTS_FOR_OUT_PUT[STRENGTH]!!')
       VALUE_COUNTS_=st.sidebar.toggle('VALUE_COUNTS',disabled=False)
@@ -96,7 +91,7 @@ elif page =="VISUALIZATION":
     st.title("""### VISUALIZATION """)
    #------------------------------------------------------------------
     st.write("AREA_CHART_DEPENDENT FEATURES (CEMENT_AGE_SUPERPLASTICIZER) AFFECTING ON STRENGTH")
-    button_VISU_2=st.button("AREA_CHART(CEMENT_AGE_SUPERPLASTICIZER)",type="primary")
+    button_VISU_2=st.sidebar.button("AREA_CHART(CEMENT_AGE_SUPERPLASTICIZER)",type="primary")
     if button_VISU_2:
      st.area_chart(
      DATA_FRAME('df'), x="Strength", y=["Cement", "Superplasticizer","Age"], color=["#f0e936", "#4633f2","#0e6210"]) # Optional
