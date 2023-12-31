@@ -248,18 +248,11 @@ elif page =="PREDICTION":
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   if ok:
     
-    # url_2= 'https://github.com/merrooo/ML_DEPLOY/blob/main/amir.pkl'
-    XGB_REG_model=XGBRegressor()
-    data={'model':XGB_REG_mode}
-    with open('amir.pkl','wb') as file:
-      pickle.dump(data,file)
-    with open('amir.pkl','rb') as file:
-     data=pickle.load(file)
-     
-     XGB_REG_model=data['model']
-      
+    # url_2= 'https://github.com/merrooo/ML_DEPLOY/blob/main/amir.pkl'  
     x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
     y=DATA_FRAME('df')['Strength']
+
+    XGB_REG_model=XGBRegressor()
     
     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
     Strength_=XGB_REG_model.fit(x_train,y_train)
@@ -273,6 +266,12 @@ elif page =="PREDICTION":
     time.sleep(1)
     my_bar.empty()
     #--------------------------------------------------------------------------
+    data={'model':XGB_REG_mode}
+    with open('amir.pkl','wb') as file:
+      pickle.dump(data,file)
+    with open('amir.pkl','rb') as file:
+     data=pickle.load(file)
+     Strength_=data['model']
     # st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
     st.write(Strength_[0])
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
