@@ -91,7 +91,7 @@ elif page =="VISUALIZATION":
     st.header("-- VISUALIZATION --")
     st.sidebar.write('AREA_CHART!!')
     button_VISU_2=st.sidebar.button("AREA_CHART",type="primary")
-    st.title('DISTRIBUTION_PLOTTING!!')
+    st.sidebar.write('DISTRIBUTION_PLOTTING!!')
     if button_VISU_2:
      st.write("AREA_CHART_DEPENDENT FEATURES (CEMENT_AGE_SUPERPLASTICIZER) AFFECTING ON STRENGTH")
      st.area_chart(
@@ -146,7 +146,7 @@ elif page =="VISUALIZATION":
       st.plotly_chart(fig, use_container_width=True)
     
     button_VISU_7=st.sidebar.button("DISTRUBTION_PLOT_5",type="primary")
-    st.title('HEAT_MAP!!')
+    st.sidebar.write('HEAT_MAP!!')
     if button_VISU_7:
       st.write("DISTRIBUTION_PLOTTING CEMENT REGARDING TO STRENGTH ")
       x1 = np.random.randn(1000) - 2
