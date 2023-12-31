@@ -237,15 +237,12 @@ elif page =="PREDICTION":
 
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   if ok:
-  
-    x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
-    y=DATA_FRAME('df')['Strength']
-
-    XGB_REG_model=XGBRegressor()
-    
-    x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
-    XGB_REG_model.fit(x_train,y_train)
-    with st.form("my_form"):
+   x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
+   y=DATA_FRAME('df')['Strength']
+   XGB_REG_model=XGBRegressor()
+   x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
+   XGB_REG_model.fit(x_train,y_train)
+   with st.form("my_form"):
     def  user_report():
      Cement=st.number_input("Cement_kg in a m3")
      Blast_Furnace_Slag=st.number_input("Blast Furnace Slag in a m3")
@@ -255,7 +252,7 @@ elif page =="PREDICTION":
      Coarse_Aggregate=st.number_input("Coarse_Aggregate_kg in a m3")
      Fine_Aggregate=st.number_input("Fine_Aggregate_kg in a m3")
      Age=st.number_input("Age_Day (1~365)")
-     submitted = st.form_submit_button("SUBMIT")
+    submitted = st.form_submit_button("SUBMIT")
 
      user_report_data = {
        'Cement':Cement,
