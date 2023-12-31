@@ -19,7 +19,7 @@ def DATA_FRAME(df):
   url_1= 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
   df=pd.read_csv(url_1)
   return df
-page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",(" Select items  --","EDA","VISUALIZATION","PREDICTION"))  
+page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",(" ","EDA","VISUALIZATION","PREDICTION"))  
 if page == "EDA":
     st.title('EXPLORING_DATA_FRAME!!')
     #------------------------------------------------------------------
@@ -283,8 +283,6 @@ else:
   st.write("-- Output Variable --")
   st.write("Concrete compressive strength -- quantitative -- MPa")
   st.header('_AMIR_ is :blue[cool] :sunglasses:')
-  st.header("CONCRETE_DATA_SET")
-  st.image("https://media.istockphoto.com/id/692096736/photo/concrete-pouring-during-commercial-concreting-floors-of-building.jpg?s=1024x1024&w=is&k=20&c=XYYH7UhgqsMmwGBWO6UJsxaSgjxNDuQO8i7N27nwRlk=", width=200)
   st.write('-------------------------------CONCLUSOR---------------------------------')
   data_matrix = [['ITEM', 'DESCIBTION'],
                ['DATA_SET', 'CONCRETE_STRENGTH'],
