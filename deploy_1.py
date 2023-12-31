@@ -264,6 +264,7 @@ elif page =="PREDICTION":
       report_data = pd.DataFrame(user_report_data, index=[0])
       return report_data
     user_data = user_report()
+    st.write(user_data)
     Strength_=XGB_REG_model.predict(user_data)
     progress_text = "Operation in progress. Please wait."
     my_bar = st.progress(0, text=progress_text)
