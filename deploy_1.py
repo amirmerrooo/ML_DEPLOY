@@ -89,7 +89,7 @@ if page == "EDA":
 elif page =="VISUALIZATION":
    #------------------------------------------------------------------
     st.header("-- VISUALIZATION --")
-    st.title('AREA_CHART!!')
+    st.sidebar.write('AREA_CHART!!')
     button_VISU_2=st.sidebar.button("AREA_CHART",type="primary")
     st.title('DISTRIBUTION_PLOTTING!!')
     if button_VISU_2:
