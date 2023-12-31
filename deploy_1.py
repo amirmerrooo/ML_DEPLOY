@@ -26,7 +26,7 @@ if page == "EDA":
     EDA_=st.sidebar.selectbox("EXPLORING_DATA_COLUMNS",("DATA_FARME_","COLUMNS_"))
 
     if EDA_ == "DATA_FARME_":
-      st.sedbar.toggle('EXPLORE_DATA',disabled=False)
+      st.sidebar.toggle('EXPLORE_DATA',disabled=False)
       CHECK_NULL_=st.toggle('CHECK_NULL',disabled=False)
       DESCRIBE_=st.toggle('DESCRIBE',disabled=False)
       COLUMNS_=st.toggle('COLUMNS',disabled=False)
