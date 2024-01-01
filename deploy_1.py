@@ -226,18 +226,6 @@ elif page =="- PREDICTION -":
    submitted = st.form_submit_button("SUBMIT")
    train()
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
-  def date_head():
-      data_1 = { 'Cement_':np.array([Cement_]),
-                'Blast_Furnace_Slag_':np.array([Blast_Furnace_Slag_]),
-                'Fly_Ash_':np.array([Fly_Ash_]),
-                'Water_':np.array([Water_]),
-                'Superplasticizer_':np.array([Superplasticizer_]),
-                'Coarse_Aggregate_':np.array([Coarse_Aggregate_]),
-                'Fine_Aggregate_':np.array([Fine_Aggregate_]),
-                'Age_':np.array([Age_])
-                }
-      return data_1
-  new_data=pd.DataFrame(date_head())
   st.dataframe(new_data)
   if ok:
   
@@ -257,7 +245,7 @@ elif page =="- PREDICTION -":
     my_bar.empty()
     #--------------------------------------------------------------------------
     st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
-    def date_head():
+    def date_head(Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_, Strength_):
       data_1 = { 'Cement_':np.array([Cement_]),
                 'Blast_Furnace_Slag_':np.array([Blast_Furnace_Slag_]),
                 'Fly_Ash_':np.array([Fly_Ash_]),
@@ -267,7 +255,10 @@ elif page =="- PREDICTION -":
                 'Fine_Aggregate_':np.array([Fine_Aggregate_]),
                 'Age_':np.array([Age_]),
                 'Strength_':np.array([Strength_])}
-      return data_1
+    return data_1
+
+Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_, Strength_ = train()
+new_data=pd.DataFrame(date_head(Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_, Strength_))
     new_data=pd.DataFrame(date_head())
     st.dataframe(new_data)
     # df.to_excel('NEW_PREDICTION_DATA.xlsx', index=False)
