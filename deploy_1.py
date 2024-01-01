@@ -222,9 +222,9 @@ elif page =="- PREDICTION -":
       Coarse_Aggregate_=st.number_input("Coarse_Aggregate_kg in a m3")
       Fine_Aggregate_=st.number_input("Fine_Aggregate_kg in a m3")
       Age_=st.number_input("Age_Day (1~365)")
-      return Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_, Strength_
+      return Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_
    train()
-    submitted = st.form_submit_button("SUBMIT")
+   submitted = st.form_submit_button("SUBMIT")
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   st.dataframe(new_data)
   if ok:
