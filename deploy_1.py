@@ -224,7 +224,7 @@ elif page =="- PREDICTION -":
       Age_=st.number_input("Age_Day (1~365)")
       return Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_, Strength_
    submitted = st.form_submit_button("SUBMIT")
-   train()
+  train()
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   st.dataframe(new_data)
   if ok:
