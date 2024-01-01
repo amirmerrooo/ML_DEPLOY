@@ -251,8 +251,8 @@ elif page =="- PREDICTION -":
         'Fine Aggregate': [Fine_Aggregate_],
         'Age': [Age_],
         'Strength': [Strength_[0]]}
-    data_1=pd.dataframe(data_1)
-    st.dataframe(data_1)
+    new_data=pd.dataframe(data_1)
+    st.dataframe(new_data)
     # df.to_excel('NEW_PREDICTION_DATA.xlsx', index=False)
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
     Strength_TRAIN=XGB_REG_model.predict(x_train)
