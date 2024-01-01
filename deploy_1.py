@@ -227,7 +227,7 @@ elif page =="- PREDICTION -":
     data_1 = {
         'Cement_':np.array('Cement_')}
       return Cement_
-    new_data=pd.dataframe(date_head)
+  new_data=pd.dataframe(date_head)
     st.dataframe(new_data)
   if ok:
   
