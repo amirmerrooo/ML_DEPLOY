@@ -224,7 +224,7 @@ elif page =="- PREDICTION -":
     submitted = st.form_submit_button("SUBMIT")
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   data_1 = {
-        'Cement_':np.array(Cement_)}
+        'Cement_':np.array('Cement_')}
   new_data=pd.dataframe(data_1)
   st.dataframe(new_data)
   if ok:
