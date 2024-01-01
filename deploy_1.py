@@ -229,9 +229,8 @@ elif page =="- PREDICTION -":
   
   if ok:
     
-    df = DATA_FRAME()
-    x=df.loc[:,df.columns != 'Strength']
-    y=df['Strength']
+    x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
+    y=DATA_FRAME('df')['Strength']
     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
     XGB_REG_model=XGBRegressor()
     XGB_REG_model.fit(x_train,y_train)
