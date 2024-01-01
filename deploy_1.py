@@ -232,7 +232,7 @@ elif page =="- PREDICTION -":
                 'Coarse_Aggregate_':np.array([Coarse_Aggregate_]),
                 'Fine_Aggregate_':np.array([Fine_Aggregate_]),
                 'Age_':np.array([Age_]),
-                'Strength_':np.array([Strength_])}
+                # 'Strength_':np.array([Strength_])}
       return data_1
   new_data=pd.DataFrame(date_head())
   st.dataframe(new_data)
