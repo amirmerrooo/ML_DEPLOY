@@ -234,7 +234,7 @@ elif page =="- PREDICTION -":
     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
     XGB_REG_model=XGBRegressor()
     XGB_REG_model.fit(x_train,y_train)
-    n = np.array([train()]).astype(np.float64)    
+    n = np.array([train()])   
     Strength_=XGB_REG_model.predict(n)
     progress_text = "Operation in progress. Please wait."
     my_bar = st.progress(0, text=progress_text)
