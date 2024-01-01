@@ -226,7 +226,6 @@ elif page =="- PREDICTION -":
    train()
    submitted = st.form_submit_button("SUBMIT")
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
-  st.dataframe(new_data)
   if ok:
   
     x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
