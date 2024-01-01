@@ -12,9 +12,7 @@ from sklearn.model_selection import GridSearchCV
 from xgboost import XGBRegressor
 from sklearn.metrics import mean_absolute_error , mean_squared_error ,r2_score
 from sklearn.model_selection import cross_val_score,TimeSeriesSplit
-# import os
-# import openpyxl
-# from openpyxl import load_workbook
+import types
 
 st.header("CONCRETE_DATA_SET")
 st.image("https://media.istockphoto.com/id/692096736/photo/concrete-pouring-during-commercial-concreting-floors-of-building.jpg?s=1024x1024&w=is&k=20&c=XYYH7UhgqsMmwGBWO6UJsxaSgjxNDuQO8i7N27nwRlk=", width=200)
@@ -233,8 +231,13 @@ elif page =="- PREDICTION -":
     n =np.array([[Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_]])
     Strength_ = XGB_REG_model.predict(n)
     st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
+
     new_data=pd.DataFrame(n,columns=['Cement_','Blast_Furnace_Slag_','Fly_Ash_','Water_','Superplasticizer_','Coarse_Aggregate_','Fine_Aggregate_','Age_'])
     new_data['Strength_'] = Strength_
+    
+    st.title('PREDICTION_SAMPLE')
+    st.dataframe(new_data)
+    
     progress_text = "Operation in progress. Please wait."
     my_bar = st.progress(0, text=progress_text)
     
@@ -277,24 +280,18 @@ elif page =="- PREDICTION -":
     fig = ff.create_table(data_matrix)
     st.plotly_chart(fig)
     #--------------------------------------------------------------------------
-    st.dataframe(new_data)
-    import types
-
+    st.title('EXPORT_PREDICTION_SAMPLE_AS_CSV.FILE')
     def my_hash_func(value):
      return id(value)
-
     @st.cache(hash_funcs={types.FunctionType: my_hash_func})
     def convert_df(new_data):
       return new_data.to_csv().encode('utf-8')
-
     csv = convert_df(new_data)
-
     st.download_button(
     label="Download data as CSV",
     data=csv,
-    file_name='large_df.csv',
-    mime='text/csv',
-)
+    file_name='NEW_PREDICTION.csv',
+    mime='text/csv')
 else:
   st.header('SOFTWARE_DEVELOPER_AI', divider='red')
   st.write("Concrete is the most important material in civil engineering.The concrete compressive strength is a highly nonlinear function of age andingredients. These ingredients include cement, blast furnace slag, fly ash, water, superplasticizer, coarse aggregate, and fine aggregate.So this the prediction for the strength regarding to the dependent features")
