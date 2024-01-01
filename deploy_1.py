@@ -224,8 +224,16 @@ elif page =="- PREDICTION -":
     submitted = st.form_submit_button("SUBMIT")
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   def date_head():
-    data_1 = { 'Cement_':np.array([Cement_])}
-    return data_1
+      data_1 = { 'Cement_':np.array([Cement_]),
+                'Blast_Furnace_Slag_':np.array([Blast_Furnace_Slag_]),
+                'Fly_Ash_':np.array([Fly_Ash_]),
+                'Water_':np.array([Water_]),
+                'Superplasticizer_':np.array([Superplasticizer_]),
+                'Coarse_Aggregate_':np.array([Coarse_Aggregate_]),
+                'Fine_Aggregate_':np.array([Fine_Aggregate_]),
+                'Age_':np.array([Age_]),
+                'Strength_':np.array([Strength_])}
+      return data_1
   new_data=pd.DataFrame(date_head())
   st.dataframe(new_data)
   if ok:
