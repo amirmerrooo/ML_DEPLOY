@@ -223,10 +223,12 @@ elif page =="- PREDICTION -":
     Age_=st.number_input("Age_Day (1~365)")
     submitted = st.form_submit_button("SUBMIT")
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
-  data_1 = {
+  def date_head(Cement_):
+    data_1 = {
         'Cement_':np.array('Cement_')}
-  new_data=pd.dataframe(data_1)
-  st.dataframe(new_data)
+      return Cement_
+    new_data=pd.dataframe(date_head)
+    st.dataframe(new_data)
   if ok:
   
     x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
