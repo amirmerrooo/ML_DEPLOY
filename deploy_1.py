@@ -222,8 +222,8 @@ elif page =="- PREDICTION -":
     Coarse_Aggregate_=st.number_input("Coarse_Aggregate_kg in a m3")
     Fine_Aggregate_=st.number_input("Fine_Aggregate_kg in a m3")
     Age_=st.number_input("Age_Day (1~365)")
-   return Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_, Strength_
-    submitted = st.form_submit_button("SUBMIT")
+    return Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_, Strength_
+   submitted = st.form_submit_button("SUBMIT")
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   def date_head():
       data_1 = { 'Cement_':np.array([Cement_]),
