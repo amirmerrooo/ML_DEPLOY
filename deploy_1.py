@@ -255,10 +255,8 @@ elif page =="- PREDICTION -":
                 'Fine_Aggregate_':np.array([Fine_Aggregate_]),
                 'Age_':np.array([Age_]),
                 'Strength_':np.array([Strength_])}
-    return data_1
-
-Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_, Strength_ = train()
-new_data=pd.DataFrame(date_head(Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_, Strength_))
+      return data_1 Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_, Strength_ = train()
+    new_data=pd.DataFrame(date_head(Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_, Strength_))
     new_data=pd.DataFrame(date_head())
     st.dataframe(new_data)
     # df.to_excel('NEW_PREDICTION_DATA.xlsx', index=False)
