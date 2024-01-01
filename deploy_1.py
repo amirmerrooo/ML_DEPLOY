@@ -231,8 +231,8 @@ elif page =="- PREDICTION -":
                 'Superplasticizer_':np.array([Superplasticizer_]),
                 'Coarse_Aggregate_':np.array([Coarse_Aggregate_]),
                 'Fine_Aggregate_':np.array([Fine_Aggregate_]),
-                'Age_':np.array([Age_]),
-                # 'Strength_':np.array([Strength_])}
+                'Age_':np.array([Age_])
+                }
       return data_1
   new_data=pd.DataFrame(date_head())
   st.dataframe(new_data)
