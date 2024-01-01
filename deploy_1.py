@@ -213,7 +213,7 @@ elif page =="- PREDICTION -":
   st.write('DATA_HEAD!!')
   st.dataframe(DATA_FRAME('df').head(5))
   with st.form("my_form"):
-  def train():
+   def train():
     Cement_=st.number_input("Cement_kg in a m3")
     Blast_Furnace_Slag_=st.number_input("Blast_Furnace_Slag_kg in a m3")
     Fly_Ash_=st.number_input("Fly_Ash_kg in a m3")
