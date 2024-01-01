@@ -12,6 +12,10 @@ from sklearn.model_selection import GridSearchCV
 from xgboost import XGBRegressor
 from sklearn.metrics import mean_absolute_error , mean_squared_error ,r2_score
 from sklearn.model_selection import cross_val_score,TimeSeriesSplit
+from openpyxl.workbook.workbook import Workbook
+import os
+import openpyxl
+from openpyxl import load_workbook
 
 st.header("CONCRETE_DATA_SET")
 st.image("https://media.istockphoto.com/id/692096736/photo/concrete-pouring-during-commercial-concreting-floors-of-building.jpg?s=1024x1024&w=is&k=20&c=XYYH7UhgqsMmwGBWO6UJsxaSgjxNDuQO8i7N27nwRlk=", width=200)
@@ -238,19 +242,18 @@ elif page =="- PREDICTION -":
     my_bar.empty()
     #--------------------------------------------------------------------------
     st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
-    
     data_1 = {
-    'Cement_': np.array([Cement_]),
-    'Blast_Furnace_Slag_':np.array([Blast_Furnace_Slag_]),
-    'Fly_Ash_': np.array([Fly_Ash_]),
-    'Water_': np.array([Water_]),
-    'Superplasticizer_': np.array([Superplasticizer_]),
-    'Coarse_Aggregate_': np.array([Coarse_Aggregate_]),
-    'Fine_Aggregate_': np.array([Fine_Aggregate_]),
-    'Age_': np.array([Age_]),
-    'STRENGTH': np.array([Strength_])}
-    NEW_PREDICTION_DATA = pd.DataFrame({k: v[0] for k, v in data_1.items()}, index=[0])
-    st.dataframe(NEW_PREDICTION_DATA)
+        'Cement': [Cement_],
+        'Blast Furnace Slag': [Blast_Furnace_Slag_],
+        'Fly Ash': [Fly_Ash_],
+        'Water': [Water_],
+        'Superplasticizer': [Superplasticizer_],
+        'Coarse Aggregate': [Coarse_Aggregate_],
+        'Fine Aggregate': [Fine_Aggregate_],
+        'Age': [Age_],
+        'Strength': [Strength_[0]]}
+    data_1=pd.dataframe(data_1)
+    st.dataframe(data_1)
     # df.to_excel('NEW_PREDICTION_DATA.xlsx', index=False)
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
     Strength_TRAIN=XGB_REG_model.predict(x_train)
