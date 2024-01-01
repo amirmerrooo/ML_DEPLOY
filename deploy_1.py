@@ -230,7 +230,7 @@ elif page =="- PREDICTION -":
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=.3, random_state=42)
     XGB_REG_model = XGBRegressor()
     XGB_REG_model.fit(x_train, y_train)
-    n =np.array(([Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_]))
+    n =np.array([[Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_]])
     Strength_ = XGB_REG_model.predict(n)
     st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
     new_data=pd.DataFrame(n,columns=['Cement_','Blast_Furnace_Slag_','Fly_Ash_','Water_','Superplasticizer_','Coarse_Aggregate_','Fine_Aggregate_','Age_'])
