@@ -242,7 +242,7 @@ elif page =="- PREDICTION -":
     #--------------------------------------------------------------------------
     st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
     data_1 = {
-        'Cement': [np.array([Cement_])]}
+        'Cement':Cement_}
     new_data=pd.dataframe(data_1)
     st.dataframe(new_data)
     # df.to_excel('NEW_PREDICTION_DATA.xlsx', index=False)
