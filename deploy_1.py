@@ -235,7 +235,7 @@ elif page =="- PREDICTION -":
     XGB_REG_model=XGBRegressor()
     XGB_REG_model.fit(x_train,y_train)
     n = np.array([train()])   
-    Strength_=XGB_REG_model.predict(n)
+    # Strength_=XGB_REG_model.predict(n)
     progress_text = "Operation in progress. Please wait."
     my_bar = st.progress(0, text=progress_text)
     
@@ -246,9 +246,11 @@ elif page =="- PREDICTION -":
     my_bar.empty()
   
     #--------------------------------------------------------------------------
-    st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
+    # st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
     new_data=pd.DataFrame(n,columns=['Cement_','Blast_Furnace_Slag_','Fly_Ash_','Water_','Superplasticizer_','Coarse_Aggregate_','Fine_Aggregate_','Age_'])
+    Strength_=XGB_REG_model.predict(n)
     new_data['Strength_'] = Strength_
+    st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
     st.dataframe(new_data)
     # df.to_excel('NEW_PREDICTION_DATA.xlsx', index=False)
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
