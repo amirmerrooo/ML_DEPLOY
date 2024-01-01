@@ -227,7 +227,7 @@ elif page =="- PREDICTION -":
    submitted = st.form_submit_button("SUBMIT")
   ok=st.button("PREDICTION_STRENGTH_CONCRETE")
   if ok:
-  
+    df = DATA_FRAME()
     x=DATA_FRAME('df').loc[:,DATA_FRAME('df').columns != 'Strength']
     y=DATA_FRAME('df')['Strength']
     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3 ,random_state=42)
@@ -237,11 +237,13 @@ elif page =="- PREDICTION -":
     Strength_=XGB_REG_model.predict(n)
     progress_text = "Operation in progress. Please wait."
     my_bar = st.progress(0, text=progress_text)
+    
     for percent_complete in range(100):
         time.sleep(0.01)
         my_bar.progress(percent_complete + 1, text=progress_text)
     time.sleep(1)
     my_bar.empty()
+    
     #--------------------------------------------------------------------------
     st.subheader(f" THE_ESTIMATED_STRENGTH_IS :- \n[{Strength_[0]:.2f}] MPa")
     def date_head(Cement_, Blast_Furnace_Slag_, Fly_Ash_, Water_, Superplasticizer_, Coarse_Aggregate_, Fine_Aggregate_, Age_, Strength_):
