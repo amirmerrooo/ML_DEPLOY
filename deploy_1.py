@@ -246,8 +246,6 @@ elif page =="- PREDICTION -":
   
     #--------------------------------------------------------------------------
     new_data['Strength_'] = Strength_
-    st.dataframe(new_data)
-    # df.to_excel('NEW_PREDICTION_DATA.xlsx', index=False)
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
     Strength_TRAIN=XGB_REG_model.predict(x_train)
     SCORE_TRAIN=r2_score(y_train,Strength_TRAIN)*100
@@ -279,8 +277,24 @@ elif page =="- PREDICTION -":
     fig = ff.create_table(data_matrix)
     st.plotly_chart(fig)
     #--------------------------------------------------------------------------
-    st.success('ALREADY_MODEL_PREDICTED!', icon="✅")
-    st.balloons()
+    st.dataframe(new_data)
+    import types
+
+    def my_hash_func(value):
+     return id(value)
+
+    @st.cache(hash_funcs={types.FunctionType: my_hash_func})
+    def convert_df(new_data):
+      return new_data.to_csv().encode('utf-8')
+
+    csv = convert_df(new_data)
+
+    st.download_button(
+    label="Download data as CSV",
+    data=csv,
+    file_name='large_df.csv',
+    mime='text/csv',
+)
 else:
   st.header('SOFTWARE_DEVELOPER_AI', divider='red')
   st.write("Concrete is the most important material in civil engineering.The concrete compressive strength is a highly nonlinear function of age andingredients. These ingredients include cement, blast furnace slag, fly ash, water, superplasticizer, coarse aggregate, and fine aggregate.So this the prediction for the strength regarding to the dependent features")
