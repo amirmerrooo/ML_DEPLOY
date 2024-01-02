@@ -292,6 +292,7 @@ elif page =="- PREDICTION -":
     data=csv,
     file_name='NEW_PREDICTION.csv',
     mime='text/csv')
+    
 else:
   st.header('SOFTWARE_DEVELOPER_AI', divider='red')
   st.write("Concrete is the most important material in civil engineering.The concrete compressive strength is a highly nonlinear function of age andingredients. These ingredients include cement, blast furnace slag, fly ash, water, superplasticizer, coarse aggregate, and fine aggregate.So this the prediction for the strength regarding to the dependent features")
