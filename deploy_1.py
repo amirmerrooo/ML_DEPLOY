@@ -235,7 +235,7 @@ elif page =="- PREDICTION -":
     new_data=pd.DataFrame(n,columns=['Cement_','Blast_Furnace_Slag_','Fly_Ash_','Water_','Superplasticizer_','Coarse_Aggregate_','Fine_Aggregate_','Age_'])
     new_data['Strength_'] = Strength_
     
-    st.title('PREDICTION_SAMPLE')
+    st.subheader('PREDICTION_SAMPLE')
     st.dataframe(new_data)
     
     progress_text = "Operation in progress. Please wait."
