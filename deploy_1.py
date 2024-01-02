@@ -23,7 +23,7 @@ def DATA_FRAME(df):
   url_1= 'https://raw.githubusercontent.com/merrooo/ML_DATA/main/concrete_data.csv'
   df=pd.read_csv(url_1)
   return df
-page=st.sidebar.selectbox("OPTINOS_FOR_EXPLORING_DATA",("- -","- EDA -","- VISUALIZATION -","- PREDICTION -"))  
+page=st.sidebar.selectbox("PROSSECCES_ON_DATA_SET",("- -","- EDA -","- VISUALIZATION -","- PREDICTION -"))  
 if page == "- EDA -":
     EDA_=st.sidebar.selectbox("EXPLORING_DATA_COLUMNS",("- -","- DATA_FARME -","- COLUMNS -"))
 
@@ -290,8 +290,10 @@ elif page =="- PREDICTION -":
     def convert_df(new_data):
         return new_data.to_csv().encode('utf-8')
 # Create a new workbook if 'large_df.xlsx' doesn't exist
-    wb = openpyxl.Workbook()
-    wb.save('large_df.xlsx')
+    # Create a new workbook if 'large_df.xlsx' doesn't exist
+    if not os.path.exists('large_df.xlsx'):
+        wb = openpyxl.Workbook()
+        wb.save('large_df.xlsx')
     wb = openpyxl.load_workbook('large_df.xlsx')
     ws = wb.active
     for index, row in new_data.iterrows():
@@ -305,6 +307,10 @@ elif page =="- PREDICTION -":
         mime='text/csv')
     st.write('PREDICTION_DATA_ADD_SUCCESSFULLY_TO_CSV.FILE')
 else:
+  
+  if 'sidebar_state' not in st.session_state:
+    st.session_state.sidebar_state = 'expanded'
+    
   st.header('SOFTWARE_DEVELOPER_AI', divider='red')
   st.write("Concrete is the most important material in civil engineering.The concrete compressive strength is a highly nonlinear function of age andingredients. These ingredients include cement, blast furnace slag, fly ash, water, superplasticizer, coarse aggregate, and fine aggregate.So this the prediction for the strength regarding to the dependent features")
   st.write("-- Input Variable --")
