@@ -255,11 +255,11 @@ elif page =="- PREDICTION -":
     st.write('------------------------------ACCURACY_TRAIN-----------------------------')
     Strength_TRAIN=XGB_REG_model.predict(x_train)
     SCORE_TRAIN=r2_score(y_train,Strength_TRAIN)*100
-    st.subheader(" ACCURACY_TRAIN_FOR_MODEL_IS :- \n[{:.2f}]%".format(SCORE_TRAIN))
+    st.subheader(" ACCURACY_TRAIN_FOR_MODEL_IS :- \n[{:.2f}] %".format(SCORE_TRAIN))
     st.write('------------------------------ACCURACY_TEST------------------------------')
     Strength_TEST=XGB_REG_model.predict(x_test)
     SCORE_TEST=r2_score(y_test,Strength_TEST)*100
-    st.subheader(" ACCURACY_TEST_FOR_MODEL_IS :- \n[{:.2f}]%".format(SCORE_TEST))
+    st.subheader(" ACCURACY_TEST_FOR_MODEL_IS :- \n[{:.2f}] %".format(SCORE_TEST))
     st.write('-----------------------------ACCURACCY_GRAPH----------------------------')
     labels = 'ACCURACY_TEST', 'ACCURACY_TRAIN'
     sizes = [48.6, 51.4]
@@ -328,9 +328,8 @@ else:
   st.write('-------------------------------CONCLUSOR---------------------------------')
   data_matrix = [['ITEM', 'DESCIBTION'],
                ['DATA_SET', 'CONCRETE_STRENGTH'],
-               ['CROSS_VALIDATION', 'TimeSeriesSplit'],
                ['MODEL', 'XGBOOST_REGRESSION'],
-               ['SCORE_TRAIN-%', 99.17],
-               ['SCORE_TEST-%', 93.86]]
+               ['SCORE_TRAIN-%', 99.58],
+               ['SCORE_TEST-%', 91.04]]
   fig = ff.create_table(data_matrix)
   st.plotly_chart(fig)
