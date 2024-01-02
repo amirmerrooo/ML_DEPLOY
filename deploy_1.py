@@ -287,9 +287,8 @@ elif page =="- PREDICTION -":
     def convert_df(new_data):
         return new_data.to_csv().encode('utf-8')
 # Create a new workbook if 'large_df.xlsx' doesn't exist
-    if not os.path.exists('large_df.xlsx'):
-        wb = openpyxl.Workbook()
-        wb.save('large_df.xlsx')
+    wb = openpyxl.Workbook()
+    wb.save('large_df.xlsx')
     wb = openpyxl.load_workbook('large_df.xlsx')
     ws = wb.active
     for index, row in new_data.iterrows():
